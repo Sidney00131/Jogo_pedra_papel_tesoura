@@ -1,4 +1,4 @@
-"""
+
 import random
 
 def jogar_pedra_papel_tesoura():
@@ -43,4 +43,3 @@ def jogar_pedra_papel_tesoura():
 # Chama a função para iniciar o jogo
 if __name__ == "__main__":
     jogar_pedra_papel_tesoura()
-"""
