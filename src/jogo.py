@@ -60,6 +60,6 @@ def jogar_pedra_papel_tesoura():
         else: # resultado == "Computador"
             print("O Computador Venceu!")
 
-# Chama a função para iniciar o jogo
+
 if __name__ == "__main__":
     jogar_pedra_papel_tesoura()
