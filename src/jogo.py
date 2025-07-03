@@ -1,5 +1,24 @@
-
 import random
+
+def determinar_vencedor(escolha_jogador, escolha_computador):
+    """
+    Determina o vencedor de uma rodada de Pedra, Papel, Tesoura.
+
+    Parâmetros:
+    escolha_jogador (str): A escolha do jogador ("pedra", "papel" ou "tesoura").
+    escolha_computador (str): A escolha do computador ("pedra", "papel" ou "tesoura").
+
+    Retorna:
+    str: "Empate", "Jogador" se o jogador vencer, ou "Computador" se o computador vencer.
+    """
+    if escolha_jogador == escolha_computador:
+        return "Empate"
+    elif (escolha_jogador == "pedra" and escolha_computador == "tesoura") or \
+         (escolha_jogador == "papel" and escolha_computador == "pedra") or \
+         (escolha_jogador == "tesoura" and escolha_computador == "papel"):
+        return "Jogador"
+    else:
+        return "Computador"
 
 def jogar_pedra_papel_tesoura():
     """
@@ -30,14 +49,15 @@ def jogar_pedra_papel_tesoura():
         print(f"\nVocê escolheu: {escolha_jogador.capitalize()}")
         print(f"O computador escolheu: {escolha_computador.capitalize()}")
 
-        # Determina o vencedor
-        if escolha_jogador == escolha_computador:
+        # Chama a nova função determinar_vencedor
+        resultado = determinar_vencedor(escolha_jogador, escolha_computador)
+        
+        # Imprime o resultado
+        if resultado == "Empate":
             print("Empate!")
-        elif (escolha_jogador == "pedra" and escolha_computador == "tesoura") or \
-             (escolha_jogador == "papel" and escolha_computador == "pedra") or \
-             (escolha_jogador == "tesoura" and escolha_computador == "papel"):
+        elif resultado == "Jogador":
             print("Você Venceu!")
-        else:
+        else: # resultado == "Computador"
             print("O Computador Venceu!")
 
 # Chama a função para iniciar o jogo
